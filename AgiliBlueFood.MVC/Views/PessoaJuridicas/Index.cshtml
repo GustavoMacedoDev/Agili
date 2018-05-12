@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AgiliBlueFood.MVC.ViewModels.PessoaJuridicaViewModel>
+
+@{
+    ViewBag.Title = "Agili Food";
+}
+
+<h2>Pessoa Jurídica</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeEmpresarial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cnpj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeEmpresarial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeFantasia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.PessoaJuridicaId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.PessoaJuridicaId }) |
+            @Html.ActionLink("Apagar", "Delete", new { id=item.PessoaJuridicaId })
+        </td>
+    </tr>
+}
+
+</table>

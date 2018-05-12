@@ -1,0 +1,19 @@
+﻿@model AgiliBlueFood.MVC.ViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Agili Food";
+}
+
+<h2>Sistema de Gerenciamento de Restaurantes</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4></h4>
+            <img src="~/Img/comida2.jpg" />
+        <hr />
+    </div>
+}
+
