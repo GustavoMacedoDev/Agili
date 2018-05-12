@@ -26,6 +26,31 @@ namespace AgiliBlueFood.MVC
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            /* /// ExtJs 4
+            bundles.Add(new StyleBundle("~/Content/extjs").Include(
+                "~/Scripts/extjs/bootstrap.css",
+                "~/Scripts/extjs/resources/css/app.css",
+                "~/Scripts/extjs/ux/css/LiveSearchGridPanel.css",
+                "~/Scripts/extjs/ux/statusbar/css/statusbar.css",
+                "~/Scripts/extjs/ux/grid/css/GridFilters.css",
+                "~/Scripts/extjs/ux/grid/css/RangeMenu.css"
+                ));
+
+            if (System.Diagnostics.Debugger.IsAttached)
+                bundles.Add(new ScriptBundle("~/bundles/extjs").Include(
+                "~/Scripts/extjs/ext/ext-all-dev.js",
+                "~/Scripts/extjs/bootstrap.js",
+                "~/translations/locale.js",
+                "~/app/util/Util.js"
+                ));
+            else
+                bundles.Add(new ScriptBundle("~/bundles/extjs").Include(
+                "~/Scripts/extjs/ext/ext-all.js",
+                "~/Scripts/extjs/bootstrap.js",
+                "~/translations/locale.js",
+                "~/app/util/Util.js"
+                )); */
         }
     }
 }

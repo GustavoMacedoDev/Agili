@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace AgiliBlueFood.MVC.ViewModels
@@ -28,10 +29,15 @@ namespace AgiliBlueFood.MVC.ViewModels
         //campo nome fantasia
         public string NomeFantasia { get; set; }
 
-
         //campo data de cadastro
         [ScaffoldColumn(false)]
         public DateTime DataCadastro { get; set; }
+
+        [DisplayName("Logradouro")]
+        public int LogradouroPessoaId { get; set; }
+        public virtual LogradouroViewModel LogradouroPessoa { get; set; }
+
+        public virtual TipoLogradouroViewModel TipoLogradouro { get; set; }
 
         public bool Ativo { get; set; }
 

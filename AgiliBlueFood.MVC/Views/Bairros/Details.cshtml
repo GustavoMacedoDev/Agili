@@ -1,0 +1,34 @@
+﻿@model AgiliBlueFood.MVC.ViewModels.BairroViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BairroViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeBairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeBairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MunicipioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MunicipioId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BairroId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

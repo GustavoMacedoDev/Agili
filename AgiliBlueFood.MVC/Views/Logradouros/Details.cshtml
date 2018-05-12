@@ -1,0 +1,77 @@
+﻿@model AgiliBlueFood.MVC.ViewModels.LogradouroViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LogradouroViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeLogradouro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeLogradouro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaisId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaisId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MunicipioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MunicipioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoLogradouroId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoLogradouroId)
+        </dd>
+
+    </dl>
+</div>
+
+<h3>Logradouros</h3>
+
+<ul>
+    @foreach (var item in Model.LogradouroId)
+    {
+        <li>@item.NomeLogradouro</li>
+    }
+
+</ul>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LogradouroId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

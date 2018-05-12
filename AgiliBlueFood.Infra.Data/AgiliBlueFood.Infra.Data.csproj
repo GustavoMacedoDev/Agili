@@ -31,15 +31,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Context\Context.cs" />
-    <Compile Include="EntityConfig\LoginConfiguration.cs" />
+    <Compile Include="EntityConfig\BairroConfiguration.cs" />
+    <Compile Include="EntityConfig\EnderecoConfiguration.cs" />
+    <Compile Include="EntityConfig\EstadoConfiguration.cs" />
+    <Compile Include="EntityConfig\LogradouroConfiguration.cs" />
+    <Compile Include="EntityConfig\MunicipioConfiguration.cs" />
     <Compile Include="EntityConfig\PaisConfiguration.cs" />
+    <Compile Include="EntityConfig\PessoaFisicaConfiguration.cs" />
     <Compile Include="EntityConfig\PessoaJuridicaConfiguration.cs" />
+    <Compile Include="EntityConfig\TipoLogradouroConfiguration.cs" />
+    <Compile Include="EntityConfig\UsuarioConfiguration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\LoginRepository.cs" />
+    <Compile Include="Repositories\BairroRepository.cs" />
+    <Compile Include="Repositories\EstadoRepository.cs" />
+    <Compile Include="Repositories\LogradouroRepository.cs" />
+    <Compile Include="Repositories\MunicipioRepository.cs" />
     <Compile Include="Repositories\PaisRepository.cs" />
+    <Compile Include="Repositories\PessoaFisicaRepository.cs" />
     <Compile Include="Repositories\PessoaJuridicaRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\TipoLogradouroRepository.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AgiliBlueFood.Domain\AgiliBlueFood.Domain.csproj">

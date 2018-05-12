@@ -1,5 +1,4 @@
-﻿
-using AgiliBlueFood.Domain.Entities;
+﻿using AgiliBlueFood.Domain.Entities;
 using System.Data.Entity.ModelConfiguration;
 
 namespace AgiliBlueFood.Infra.Data.EntityConfig
@@ -20,6 +19,10 @@ namespace AgiliBlueFood.Infra.Data.EntityConfig
             Property(p => p.NomeFantasia)
                 .IsRequired()
                 .HasMaxLength(150);
+
+            HasRequired(p => p.LogradouroPessoa)
+                .WithMany()
+                .HasForeignKey(p => p.LogradouroPessoaId);
         }
     }
 }

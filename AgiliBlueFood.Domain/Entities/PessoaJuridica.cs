@@ -16,8 +16,12 @@ namespace AgiliBlueFood.Domain.Entities
         public string NomeFantasia { get; set; }
         //campo data de cadastro
         public DateTime DataCadastro { get; set; }
-
+                       
         public bool Ativo { get; set; }
+
+        public int LogradouroPessoaId { get; set; }
+        public virtual Logradouro LogradouroPessoa { get; set; }
+
 
     }
 }

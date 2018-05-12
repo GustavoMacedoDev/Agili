@@ -71,18 +71,37 @@ namespace AgiliBlueFood.MVC.App_Start
             kernel.Bind(typeof(IAppServiceBase<>)).To(typeof(AppServiceBase<>));
             //classes de entidades da App
             kernel.Bind<IPessoaJuridicaAppService>().To<PessoaJuridicaAppService>();
-            kernel.Bind<ILoginAppService>().To<LoginAppService>();
             kernel.Bind<IPaisAppService>().To<PaisAppService>();
+            kernel.Bind<IEstadoAppService>().To<EstadoAppService>();
+            kernel.Bind<IMunicipioAppService>().To<MunicipioAppService>();
+            kernel.Bind<IBairroAppService>().To<BairroAppService>();
+            kernel.Bind<ITipoLogradouroAppService>().To<TipoLogradouroAppService>();
+            kernel.Bind<ILogradouroAppService>().To<LogradouroAppService>();
+            kernel.Bind<IPessoaFisicaAppService>().To<PessoaFisicaAppService>();
+            kernel.Bind<IUsuarioAppService>().To<UsuarioAppService>();
+
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IPessoaJuridicaService>().To<PessoaJuridicaService>();
-            kernel.Bind<ILoginService>().To<LoginService>();
             kernel.Bind<IPaisService>().To<PaisService>();
+            kernel.Bind<IEstadoService>().To<EstadoService>();
+            kernel.Bind<IMunicipioService>().To<MunicipioService>();
+            kernel.Bind<IBairroService>().To<BairroService>();
+            kernel.Bind<ITipoLogradouroService>().To<TipoLogradouroService>();
+            kernel.Bind<ILogradouroService>().To<LogradouroService>();
+            kernel.Bind<IPessoaFisicaService>().To<PessoaFisicaService>();
+            kernel.Bind<IUsuarioService>().To<UsuarioService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IPessoaJuridicaRepository>().To<PessoaJuridicaRepository>();
-            kernel.Bind<ILoginRepository>().To<LoginRepository>();
             kernel.Bind<IPaisRepository>().To<PaisRepository>();
+            kernel.Bind<IEstadoRepository>().To<EstadoRepository>();
+            kernel.Bind<IMunicipioRepository>().To<MunicipioRepository>();
+            kernel.Bind<IBairroRepository>().To<BairroRepository>();
+            kernel.Bind<ITipoLogradouroRepository>().To<TipoLogradouroRepository>();
+            kernel.Bind<ILogradouroRepository>().To<LogradouroRepository>();
+            kernel.Bind<IPessoaFisicaRepository>().To<PessoaFisicaRepository>();
+            kernel.Bind<IUsuarioRepository>().To<UsuarioRepository>();
         }        
     }
 }

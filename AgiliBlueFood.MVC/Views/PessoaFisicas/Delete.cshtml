@@ -1,0 +1,47 @@
+﻿@model AgiliBlueFood.MVC.ViewModels.PessoaFisicaViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Deletar registro</h2>
+
+<h3>Tem certeza que deseja deletar?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomePf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomePf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Lista", "Index")
+        </div>
+    }
+</div>

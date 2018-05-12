@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AgiliBlueFood.MVC.ViewModels.LogradouroViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoLogradouroId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeLogradouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MunicipioId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaisId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoLogradouro.TipoDoLogradouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeLogradouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Complemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Municipio.NomeMunicipio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.NomeEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pais.NomePais)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.LogradouroId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.LogradouroId }) |
+            @Html.ActionLink("Deletar", "Delete", new { id = item.LogradouroId })
+        </td>
+    </tr>
+}
+
+</table>

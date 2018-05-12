@@ -14,8 +14,15 @@ namespace AgiliBlueFood.MVC.AutoMapper
         protected override void Configure()
         {
             Mapper.CreateMap<PessoaJuridica, PessoaJuridicaViewModel>();
-            Mapper.CreateMap<Login, LoginViewModel>();
             Mapper.CreateMap<Pais, PaisViewModel>();
+            Mapper.CreateMap<Estado, EstadoViewModel>();
+            Mapper.CreateMap<Municipio, MunicipioViewModel>();
+            Mapper.CreateMap<Bairro, BairroViewModel>();
+            Mapper.CreateMap<TipoLogradouro, TipoLogradouroViewModel>();
+            Mapper.CreateMap<Logradouro, LogradouroViewModel>();
+            Mapper.CreateMap<PessoaFisica, PessoaFisicaViewModel>();
+            Mapper.CreateMap<Usuario, UsuarioViewModel>();
+
         }
     }
 }

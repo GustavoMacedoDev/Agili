@@ -10,10 +10,12 @@ namespace AgiliBlueFood.MVC.Controllers
     public class PessoaJuridicasController : Controller
     {
         private readonly IPessoaJuridicaAppService _pessoaJuridicaApp;
+        private readonly ILogradouroAppService _logradouroAppService;
 
-        public PessoaJuridicasController(IPessoaJuridicaAppService pessoaJuridicaApp)
+        public PessoaJuridicasController(IPessoaJuridicaAppService pessoaJuridicaApp, ILogradouroAppService logradouroAppService)
         {
             _pessoaJuridicaApp = pessoaJuridicaApp;
+            _logradouroAppService = logradouroAppService;
         }
 
        // private readonly PessoaJuridicaRepository _pessoaJuridicaRepository = new PessoaJuridicaRepository();
@@ -31,12 +33,16 @@ namespace AgiliBlueFood.MVC.Controllers
             var pessoaJuridica = _pessoaJuridicaApp.GetById(id);
             var pessoaJuridicaViewModel = Mapper.Map<PessoaJuridica, PessoaJuridicaViewModel>(pessoaJuridica);
 
-            return View(pessoaJuridicaViewModel);
+            return View(pessoaJuridicaViewModel);   
         }
 
         // GET: PessoaJuridicas/Create
         public ActionResult Create()
         {
+            ViewBag.LogradouroId = new SelectList(_logradouroAppService.GetAll(), "LogradouroId", "NomeLogradouro");
+            ViewBag.Complemento = new SelectList(_logradouroAppService.GetAll(), "LogradouroId", "Complemento");
+            ViewBag.TipoLogradouro = new SelectList(_logradouroAppService.GetAll(), "LogradouroId", "TipoLogradouro");
+
             return View();
         }
 

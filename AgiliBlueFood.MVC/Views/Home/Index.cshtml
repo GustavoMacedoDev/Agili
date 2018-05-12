@@ -1,19 +1,30 @@
-﻿@model AgiliBlueFood.MVC.ViewModels.LoginViewModel
+﻿@model AgiliBlueFood.MVC.ViewModels.UsuarioViewModel
+    @{
+        ViewBag.Title = "Agili Food";
+    }
 
-@{
-    ViewBag.Title = "Agili Food";
-}
 
-<h2>Sistema de Gerenciamento de Restaurantes</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4></h4>
-            <img src="~/Img/comida2.jpg" />
-        <hr />
-    </div>
+        <div id="fundo-externo">
+            <div class="fundo">
+                <img src="~/Img/fundo.jpg" />
+            </div>
+
+            <hr />
+
+        </div>
+        </div>
+    }
+
+
+@*@{
+    ViewBag.Title = "Ext JS42...";
 }
 
+<script type="text/javascript" src="~/Scripts/extjs/app.js"></script>*@ 

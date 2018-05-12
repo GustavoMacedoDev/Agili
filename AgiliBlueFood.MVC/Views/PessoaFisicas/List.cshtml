@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AgiliBlueFood.MVC.ViewModels.PessoaFisicaViewModel>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomePf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomePf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PessoaFisicaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PessoaFisicaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PessoaFisicaId })
+        </td>
+    </tr>
+}
+
+</table>

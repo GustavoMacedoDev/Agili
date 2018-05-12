@@ -31,14 +31,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AppServiceBase.cs" />
+    <Compile Include="BairroAppService.cs" />
+    <Compile Include="EstadoAppService.cs" />
     <Compile Include="Interface\IAppServiceBase.cs" />
-    <Compile Include="Interface\ILoginAppService.cs" />
+    <Compile Include="Interface\IBairroAppService.cs" />
+    <Compile Include="Interface\IEstadoAppService.cs" />
+    <Compile Include="Interface\ILogradouroAppService.cs" />
+    <Compile Include="Interface\IMunicipioAppService.cs" />
     <Compile Include="Interface\IPaisAppService.cs" />
+    <Compile Include="Interface\IPessoaFisicaAppService.cs" />
     <Compile Include="Interface\IPessoaJuridicaAppService.cs" />
-    <Compile Include="LoginAppService.cs" />
+    <Compile Include="Interface\ITipoLogradouroAppService.cs" />
+    <Compile Include="Interface\IUsuarioAppService.cs" />
+    <Compile Include="LogradouroAppService.cs" />
+    <Compile Include="MunicipioAppService.cs" />
     <Compile Include="PaisAppService.cs" />
+    <Compile Include="PessoaFisicaAppService.cs" />
     <Compile Include="PessoaJuridicaAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoLogradouroAppService.cs" />
+    <Compile Include="UsuarioAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AgiliBlueFood.Domain\AgiliBlueFood.Domain.csproj">

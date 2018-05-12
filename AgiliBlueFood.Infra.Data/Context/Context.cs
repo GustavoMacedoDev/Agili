@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace AgiliBlueFood.Infra.Data.Context
 {
-    //
+    //essa classe é responsavel por persistir as tabelas no banco de dados
     public class Contexto : DbContext
     {
         //seta a string de conexao que esta no web.config
@@ -18,11 +18,19 @@ namespace AgiliBlueFood.Infra.Data.Context
 
         }
 
-        //tabela a ser criada
+        //tabelas a serem criadas
         public DbSet<PessoaJuridica> PessoasJuridicas { get; set; }
-        public DbSet<Login> Logins { get; set; }
         public DbSet<Pais> Paises { get; set; }
+        public DbSet<Estado> Estados { get; set; }
+        public DbSet<Municipio> Municipios { get; set; }
+        public DbSet<Bairro> Bairros { get; set; }
+        public DbSet<TipoLogradouro> TipoLogradouros { get; set; }
+        public DbSet<Logradouro> Logradouros { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<PessoaFisica> PessoaFisicas { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
         
+        //Esse metodo seta algumas configuracoes para criacao das tabelas
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //utilizado para sistema nao pluralizar o nome das tabelas 
@@ -32,7 +40,7 @@ namespace AgiliBlueFood.Infra.Data.Context
             //nao deletar quando tiver relacao de muitos para muitos
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            //diz ao contexto qual a primary k ey
+            //diz ao contexto qual a primary kEy
             modelBuilder.Properties()
                 .Where(p => p.Name == p.ReflectedType.Name + "Id")
                 .Configure(p => p.IsKey());
@@ -44,12 +52,20 @@ namespace AgiliBlueFood.Infra.Data.Context
             modelBuilder.Properties<string>()
                 .Configure(p => p.HasMaxLength(100));
 
+
+            //todas as classes adicionadas aqui pegaram a configuracao de cima
             modelBuilder.Configurations.Add(new PessoaJuridicaConfiguration());
-            modelBuilder.Configurations.Add(new LoginConfiguration());
             modelBuilder.Configurations.Add(new PaisConfiguration());
+            modelBuilder.Configurations.Add(new EstadoConfiguration());
+            modelBuilder.Configurations.Add(new MunicipioConfiguration());
+            modelBuilder.Configurations.Add(new BairroConfiguration());
+            modelBuilder.Configurations.Add(new TipoLogradouroConfiguration());
+            modelBuilder.Configurations.Add(new LogradouroConfiguration());
+            modelBuilder.Configurations.Add(new PessoaFisicaConfiguration());
 
         }
 
+        //Esse metodo trata as datas de cadastro para que nao sejem alteradas em um update
         public override int SaveChanges()
         {
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))

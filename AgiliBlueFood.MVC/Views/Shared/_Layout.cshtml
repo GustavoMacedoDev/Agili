@@ -1,46 +1,68 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title AgiliBlue</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("CADASTROS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <div>
-                    @Html.ActionLink("Pessoa Juridica", "Index", "PessoaJuridicas", new { area = "" }, new { @class = "navbar-brand" })
-                    @Html.ActionLink("Usuarios", "Index", "Logins", new { area = "" }, new { @class = "navbar-brand" })
-                    @Html.ActionLink("País", "Index", "Paises", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title AgiliBlue</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/ExtJs/js")
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+                    @Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "btn btn-default" })
+                    <div>
+                        @Html.ActionLink("Pessoa Juridica", "Index", "PessoaJuridicas", new { area = "" }, new { @class = "btn btn-default" }) </ br>
+                        </ br>
+                        @Html.ActionLink("Usuarios", "Index", "Usuarios", new { area = "" }, new { @class = "btn btn-default" })
+                        @Html.ActionLink("País", "Index", "Paises", new { area = "" }, new { @class = "btn btn-default" })
+                        @Html.ActionLink("Estado", "Index", "Estados", new { area = "" }, new { @class = "btn btn-default" })
+                        @Html.ActionLink("Município", "Index", "Municipios", new { area = "" }, new { @class = "btn btn-default" })
+                        @Html.ActionLink("Bairro", "Index", "Bairros", new { area = "" }, new { @class = "btn btn-default" })
+                        @Html.ActionLink("Endereco", "Index", "Logradouros", new { area = "" }, new { @class = "btn btn-default" })
+                        @Html.ActionLink("Pessoa Fisica", "Index", "PessoaFisicas", new { area = "" }, new { @class = "btn btn-default" })
+                       </div>
+
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"></ul>
+                </div>
             </div>
         </div>
-    </div>
+        
+        
+        <div class="container body-content">
+            @RenderBody()
+        </div>
 
-    <div class="container body-content">
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>
+
+@*<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+
+    @Styles.Render("~/Content/extjs")
+    @Scripts.Render("~/bundles/extjs")
+</head>
+<body>
+    <div>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; Agili Software Brasil</p>
-        </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
-</html>
+</html>*@
